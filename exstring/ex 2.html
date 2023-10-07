@@ -1,0 +1,58 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ex 2</title>
+        <style>
+           
+            s
+            {
+                border: 1px solid;
+                width: auto;
+                height: 50px;
+                font-family: Arial;
+            
+            
+            }
+       
+       
+       </style>
+
+<script lang="JavaScript">
+     
+     
+     function questao()
+    {   
+                
+        
+        
+        document.getElementById("cwl").innerHTML = ''; 
+                var cc, n, i;
+
+                cc = document.frm.txtCarac.value;
+                n = document.frm.txtNum.value;
+
+                for (i=0; i<n; i++)
+                {
+                    
+                    
+                    
+                    document.getElementById("cwl").innerHTML += cc; 
+                
+                }
+            
+    }
+        </script>
+</head>
+<body>
+    
+</body>
+    <form name="frm">
+        ca: <input type="text" name="txtCarac" value=""><br>
+        num: <input type="text" name="txtNum" value=""><br>
+        <input type="button" value="OK" onclick="questao()">
+    </form>
+
+    <table>
+        <td id="cwl"></td>
+    </table>
+</html>

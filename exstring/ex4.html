@@ -1,0 +1,85 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ex 4</title>
+
+    <script lang="JavaScript">
+        function p() 
+        {
+            var sp1, sp2, ino, fm, tt;
+
+            sp1 = document.frm.txtCarac.value.toLowerCase(); 
+            sp2 = '';
+            tt = '';
+
+            for (ino = 0; ino < sp1.length; ino++) 
+            {
+                if (sp1.charAt(ino) != " " && sp1.charAt(ino) != ".") 
+                {
+                    
+                    
+                    
+                    
+                    
+                    sp2 += sp1.charAt(ino);
+                
+            
+                
+                }
+            
+            
+            
+            
+            }
+
+            for (fm = sp2.length- 1; fm >= 0; fm--) 
+            
+            {
+                
+                
+                tt += sp2.charAt(fm);
+            
+            
+            
+            
+            
+            }
+
+            if (sp2 == tt) 
+            {
+            
+            
+            
+            
+                document.getElementById("alvo").innerHTML = "e  palíndromo.";
+            } 
+
+
+
+
+            else 
+            {
+                document.getElementById("alvo").innerHTML = "não é  palíndromo.";
+            
+            
+            
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    
+        <form name="frm">
+            informe uma palavra para saber se palindromo: <input type="text" name="txtCarac" value=""><br>
+
+            <input type="button" value="OK" onclick="p()">
+        </form>
+        <p id="alvo">
+
+        </p>
+    
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ex 1</title>
+
+    <style>
+        .pt1 
+        {
+            text-align: center;
+            display: flex;
+            font-family: Arial;
+            flex-direction: row;
+        }
+
+        .pt2
+        {
+            text-align: center;
+            display: flex;
+            font-family: Arial;
+            flex-direction: column;
+        }
+
+        .borda 
+        {
+            border: 1px solid;
+            border-radius: 5px;
+            width: 40px;
+            height: 20px;
+        }
+
+    </style>
+
+    <script lang="JavaScript">
+        function processo()
+        {
+            var l, i, tt, o, x1, x2;
+
+            l = document.frm.txtCarac.value;
+            tt = l.length;
+
+            x1 = document.querySelector('.pt1');
+            
+            for (i = 0; i<tt; i++)
+            {
+
+                o = document.createElement('td');
+                o.className = 'borda';
+                o.textContent = l.charAt(i);
+                x1.appendChild(o);
+            }
+
+            x2 = document.querySelector('.pt2');
+            
+            for (i = 0; i<tt; i++)
+            {
+
+                o = document.createElement('td');
+                o.className = 'borda';
+                o.textContent = l.charAt(i);
+                x2.appendChild(o);
+            }
+            
+        }
+    </script>
+</head>
+
+<body>
+    
+    
+        <form name="frm">
+            informe uma palavra: <input type="text" name="txtCarac" value=""><br>
+
+            <input type="button" value="OK" onclick="processo()">
+        </form>
+    
+
+</body>
+
+    <table class="pt1">
+    </table>
+
+    <table class="pt2">
+    </table>
+
+</html>

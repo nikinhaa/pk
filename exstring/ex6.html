@@ -1,0 +1,86 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 6</title>
+
+    <script lang="JavaScript">
+       function rb()
+       {
+            var st, str, kd, pp;
+
+            st = document.frm.txtCarac.value.toLowerCase();
+
+            str = st.split(' ');
+
+            for(kd = 0; kd < str.length - 1; kd++)
+            {
+                for(pp = 0; pp < str[kd].length - 1; pp++)
+                {
+                    if(str[kd].charAt(pp) == " ")
+                    {
+                        str[kd].charAt(pp) == "";
+                    }
+                }
+            }
+
+            str[str.length - 1] = str[str.length - 1].toUpperCase();
+            str[0] = str[0].charAt(0).toUpperCase() + str[0].slice(1);
+
+            
+
+            if(str[str.length-2] == "de" || str[str.length-2] == "da" || str[str.length-2] == "do" || str[str.length-2] == "das" || str[str.length-2] == "dos")
+            {   
+                str[str.length - 2] = str[str.length - 2].toUpperCase();
+                document.getElementById("alvo").innerHTML = "<b>" +  str[str.length-2] + " " +str[str.length-1] + ",</b> ";
+
+                document.getElementById("alvo").innerHTML += str[0] + " ";
+
+                for (kd = 1; kd < str.length - 2; kd++)
+                {
+                    if (str[kd] == "de" || str[kd] == "da" || str[kd] == "do" || str[kd] == "das" || str[kd] == "dos")
+                    {
+                        document.getElementById("alvo").innerHTML += str[kd] + " ";
+                    }
+                   
+                    else
+                    {
+                        str[kd] = str[kd].charAt(0).toUpperCase() + ". ";
+                        document.getElementById("alvo").innerHTML += str[kd] + " ";
+                    }
+                }
+
+            }
+            else
+            {
+            document.getElementById("alvo").innerHTML = "<b>" + str[str.length-1] + ",</b> ";
+
+                document.getElementById("alvo").innerHTML += str[0] + " ";
+
+                for(kd = 1; kd < str.length - 1; kd++)
+                {
+                    if (str[kd] == "de" || str[kd] == "da" || str[kd] == "do" || str[kd] == "das" || str[kd] == "dos")
+                    {
+                        document.getElementById("alvo").innerHTML += str[kd] + " ";
+                    }
+                   
+                    else
+                    {
+                        str[kd] = str[kd].charAt(0).toUpperCase() + ". ";
+                        document.getElementById("alvo").innerHTML += str[kd] + " ";
+                    }
+                }
+            }
+       }
+    </script>
+
+</head>
+
+<body>
+<form name="frm">
+diga o Nome: <input type="text" name="txtCarac" value=""><br>
+<input type="button" value="OK" onclick="rb()">
+</form>
+<p id="alvo">
+</p>
+</body>
+</html>

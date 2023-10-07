@@ -1,0 +1,106 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ex 3</title>
+    <script lang="JavaScript">
+        function yp()
+        {
+            var st, cl,cc, cn, cr, i;
+
+            st = document.frm.txtCarac.value.toLowerCase();
+
+            cl = 0;
+            cc = 0;
+            cn = 0;
+            cr = 0;
+
+            document.getElementById("a1").innerHTML = '';
+            document.getElementById("a2").innerHTML = '';
+            document.getElementById("a3").innerHTML = '';
+            document.getElementById("a4").innerHTML = '';
+
+            for (i = 0; i<st.length; i++)
+            {
+                if(st.charAt(i) == "a" || st.charAt(i) == "e" || st.charAt(i) == "i" || st.charAt(i) == "o" || st.charAt(i) == "u")
+
+                {
+                    cl++;
+                }
+
+                else if (st.charAt(i) == "b" || st.charAt(i) == "c" || st.charAt(i) == "d" || st.charAt(i) == "f" || st.charAt(i) == "g" || 
+                st.charAt(i) == "h" || st.charAt(i) == "j" || st.charAt(i) == "k" || st.charAt(i) == "l" || st.charAt(i) == "m" ||
+                st.charAt(i) == "n" || st.charAt(i) == "p" || st.charAt(i) == "q" || st.charAt(i) == "r" || st.charAt(i) == "s" ||
+                st.charAt(i) == "t" || st.charAt(i) == "v" || st.charAt(i) == "w" || st.charAt(i) == "x" || st.charAt(i) == "y" || st.charAt(i) == "z")
+
+                {
+                    cc++;
+                }
+
+                else if (st.charAt(i) == "0" || st.charAt(i) == "1" || st.charAt(i) == "2" || st.charAt(i) == "3" || st.charAt(i) == "4" ||
+                st.charAt(i) == "5" || st.charAt(i) == "6" || st.charAt(i) == "7" || st.charAt(i) == "8" || st.charAt(i) == "9")
+                {
+                    cn++;
+                }
+
+                else
+                {
+                    cr++;
+                }
+
+            }
+
+                document.getElementById("a1").innerHTML = cl;
+                document.getElementById("a2").innerHTML = cc;
+                document.getElementById("a3").innerHTML = cn;
+                document.getElementById("a4").innerHTML = cr;
+        }
+
+    </script>
+
+    <style>
+        td
+        {
+            border: 2px solid;
+            width: 215px;
+            height: 50px;
+            text-align: center;
+        }
+
+        body
+        {
+            font-family: Arial;
+       
+        }
+    
+    
+    </style>
+</head>
+
+
+<body>
+    
+
+        <form name="frm">
+            informe uma palavra: <input type="text" name="txtCarac" value=""><br>
+
+            <input type="button" value="OK" onclick="yp()">
+        </form>
+
+        <table>
+            <tr>
+                <td>N vogais</td>
+                <td>N consoantes</td>
+                <td>N dígitos</td>
+                <td>N ou caracteres</td>
+            </tr>
+
+            <tr>
+                <td id = "a1"></td>
+                <td id ="a2"></td>
+                <td id ="a3"></td>
+                <td id ="a4"></td>
+            </tr>
+        </table>
+    
+</body>
+</html>

@@ -1,0 +1,68 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ex 5</title>
+
+    <script lang="JavaScript">
+        function pl() 
+        {
+        var st, str, iw;
+
+        st = document.frm.txtCarac.value.toLowerCase();
+            str = st.split(' ');
+
+        str[str.length - 1] = str[str.length - 1].charAt(0).toUpperCase() + str[str.length - 1].slice(1);
+            str[0] = str[0].charAt(0).toUpperCase() + str[0].slice(1);
+
+            if (str[str.length - 2] == "de" || str[str.length - 2] == "da" || str[str.length - 2] == "do" || str[str.length - 2] == "das" || str[str.length - 2] == "dos") 
+            {
+            document.getElementById("alvo").innerHTML = str[str.length - 2] + " " + str[str.length - 1] + ", ";
+                
+               document.getElementById("alvo").innerHTML += str[0] + " ";
+
+            for (iw = 1; iw < str.length - 2; iw++) 
+            {
+                if (str[iw] == "de" || str[iw] == "da" || str[iw] == "do" || str[iw] == "das" || str[iw] == "dos") 
+                {
+                        
+                    
+                    document.getElementById("alvo").innerHTML += str[iw] + " ";
+                } 
+                 else 
+                {
+                        str[iw] = str[iw].charAt(0).toUpperCase() + str[iw].slice(1);
+                        document.getElementById("alvo").innerHTML += str[iw] + " ";
+                 }
+            }
+            } 
+            else 
+            {
+                
+                document.getElementById("alvo").innerHTML = str[str.length - 1] + ", ";
+                
+                  document.getElementById("alvo").innerHTML += str[0] + " ";
+
+            for (iw = 1; iw < str.length - 1; iw++) 
+            {
+                if (str[iw] == "de" || str[iw] == "da" || str[iw] == "do" || str[iw] == "das" || str[iw] == "dos")
+                {
+                    document.getElementById("alvo").innerHTML += str[iw] + " ";
+                } 
+                else 
+                {
+                        str[iw] = str[iw].charAt(0).toUpperCase() + str[iw].slice(1);
+                        document.getElementById("alvo").innerHTML += str[iw] + " ";
+                }
+            }
+            }
+        }
+    </script>
+</head>
+<body>
+<form name="frm">
+informe o nome: <input type="text" name="txtCarac" value=""><br>
+<input type="button" value="OK" onclick="pl()">
+</form>
+<p id="alvo"></p>
+</body>
+</html>
